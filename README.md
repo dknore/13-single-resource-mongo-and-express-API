@@ -11,43 +11,47 @@
 
 ## Learning Objectives  
 * Students will gain experience configuring RESTful Express routes
-* Students will gane experience working with MongoDB through Mongoose
-* Students will use advanced Mongoose features like Sub-Documents, methods and
-  Validation
+* Students will gain experience working with MongoDB through Mongoose
+* Students will use advanced Mongoose features like Sub-Documents, attaching
+  methods to Schemas, and Validation
 
 ## Requirements
-#### Configuration
+### Configuration
 * `package.json`
 * `.gitignore`
 * `README.md`
-  * your `README.md` should include detailed instructions on how to use your API
+  * Include detailed instructions on how to use your API
+  * Include a summary description of your Mongoose Schemas, methods they have,
+    and validation they use.
 
-#### Feature Tasks
-* Create an HTTP Server using `express`
-* Create a resource **model** of your choice that uses `mongoose.Schema` and `mongoose.model`
-* Use the `body-parser` express middleware to parse the `req` body on `POST` and `PUT` requests
-* Use the express `Router` to create a route for doing **RESTful CRUD** operations against your _model_
-* Configure your model to use two Schemas. Have one Schema be a Sub-Document
-  inside the second Schema.
+### Feature Tasks
+#### Database Tasks
+* Create two `mongoose.Schema` Schemas
+* Make one Schema be a Sub-Document of the second Schema.
 * Configure two properties to use Mongoose built-in validation.
 * Configure one property to use custom Mongoose validaton.
-* Attach one custom function to the `.methods` property on your Schema to add
+* Attach one custom function to the `.methods` property on either Schema to add
   extra functionality.
+* Create one Model for the Schema with a Sub-Document.
+
+#### Server Tasks
+* Create an HTTP Server using `express`
+* Use the `body-parser` express middleware to parse the `req` body on `POST` and `PUT` requests
+* Use the express `Router` to create a route for doing **RESTful CRUD**
+  operations against your Mongoose model
 
 ## Server Endpoints
 ### `/api/resource-name`
 * `POST` request
   * should pass data as stringifed JSON in the body of a post request to create a new resource
 
-### `/api/resource-name/:id`
+### `/api/resource-name?id`
 * `GET` request
   * should pass the id of a resource through the url endpoint to get a resource
-    * **this should use `req.params`, not querystring parameters**
 * `PUT` request
   * should pass data as stringifed JSON in the body of a put request to update a pre-existing resource
 * `DELETE` request
   * should pass the id of a resource though the url endpoint to delete a resource
-    * **this should use `req.params`**
 
 ### Tests
 Write "sunny day" tests making sure your GET PUT POST and DELETE routes work
