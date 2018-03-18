@@ -86,14 +86,5 @@ router.delete('/', (req, res) => {
   }
 });
 
-// router.delete('/coffee/:id', (req, res) => {
-//     Coffee.findByIdAndRemove(req.params.id)
-//         .then(() => {    
-//             console.log('Delete:', req.params.id)
-//             res.sendStatus(204)
-//         })
-//         .catch(err => createError(500, err.message))
-// });
-
 module.exports = router;
 
